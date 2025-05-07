@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Counter(){
+function Colorchange(){
 
   const [color , setColor] = useState("")
 
@@ -24,4 +24,31 @@ function Counter(){
     )
   };
 
-  export default Counter;
+function Counter(){
+  const [count, Setcount] = useState(0);
+  const [inputValue , setinputValue] = useState(0);
+
+  return(
+
+
+
+    <>
+
+    <input type="number"
+    value={inputValue}
+    onChange={(e)=> setinputValue(Number(e.target.value))}
+    />
+
+
+    <button onClick={()=> Setcount(count + inputValue)}> increase </button>
+    <button onClick={()=>{
+      setinputValue(0);
+      Setcount(0);
+    }}>reset</button>
+
+    <p> {count} </p>
+    </>
+  )
+}
+
+  export {Counter, Colorchange};
