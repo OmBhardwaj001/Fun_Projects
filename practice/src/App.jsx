@@ -1,14 +1,15 @@
-import React from "react";
-import Test from "./components/test.jsx";
-import "../src/style.css"
+
+import Card from "./components/card";
+import Cart from "./components/Cart";
 
 function App(){
   return(
-    <>
-    <Test/>
-    </>
+    <div>
+    <Card name="iphone" price="54000"/>
+    <Card name="Fridge" price="66660"/>
+    <Cart/>
+    </div>
   )
 }
-
 
 export default App;
