@@ -3,6 +3,7 @@ import { Outlet, createRootRoute, Link } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { Suspense } from "react";
 import { ClipLoader } from "react-spinners";
+import useCartStore from "../store/cartStore"
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -10,6 +11,9 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const cartCount = useCartStore((state) => state.cart.length);
+  const addToCart = useCartStore((state)=> state.addToCart);
+
   return (
     <React.Fragment>
       <nav>
